@@ -1,0 +1,44 @@
+﻿@model _19T1021037.DomainModels.Category
+@{
+
+}
+
+<div class="box box-primary">
+    <div class="box-body">
+        <form class="form-horizontal" action="~/Category/Save" method="post">
+            @Html.AntiForgeryToken()
+
+            @Html.HiddenFor(m => m.CategoryID)
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Tên loại hàng</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(m => m.CategoryName, new { @class = "form-control", @autofocus = "autofocus" })
+                    @Html.ValidationMessageFor(m => m.CategoryName, "", new { @style = "color:red" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Mô tả</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    @Html.ValidationSummary("", new { style = "color:red" })
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-floppy-o"></i>
+                        Lưu dữ liệu
+                    </button>
+
+                    <a href="~/Category" class="btn btn-warning">
+                        Quay lại
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
