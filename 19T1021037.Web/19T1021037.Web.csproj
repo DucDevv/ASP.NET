@@ -140,6 +140,7 @@
     <Compile Include="Models\EmployeeSearchOutput.cs" />
     <Compile Include="Models\PaginationSearchInput.cs" />
     <Compile Include="Models\PaginationSearchOutput.cs" />
+    <Compile Include="Models\ProductSearchOutput.cs" />
     <Compile Include="Models\ShipperSearchOutput.cs" />
     <Compile Include="Models\SupplierSearchOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -153,6 +154,34 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\Employee\2560x1080 macOS Catalina Mountains 2560x1080 Resolution Wallpaper, HD Nature 4K Wallpapers, Images, Photos and Background - Wallpapers Den - Copy.jpg" />
+    <Content Include="Image\Employee\2560x1080 macOS Catalina Mountains 2560x1080 Resolution Wallpaper, HD Nature 4K Wallpapers, Images, Photos and Background - Wallpapers Den.jpg" />
+    <Content Include="Image\Employee\329042941_1135034690513981_2173463393972593110_n - Copy.jpg" />
+    <Content Include="Image\Employee\329042941_1135034690513981_2173463393972593110_n.jpg" />
+    <Content Include="Image\Employee\g1 - Copy.jpg" />
+    <Content Include="Image\Employee\g1.jpg" />
+    <Content Include="Image\Employee\g2 - Copy.jpeg" />
+    <Content Include="Image\Employee\g2.jpeg" />
+    <Content Include="Image\Employee\g3 - Copy.jpg" />
+    <Content Include="Image\Employee\g3.jpg" />
+    <Content Include="Image\Employee\g4 - Copy.jpg" />
+    <Content Include="Image\Employee\g4.jpg" />
+    <Content Include="Image\Employee\g5.jpg" />
+    <Content Include="Image\Employee\g6.jpg" />
+    <Content Include="Image\Employee\g7.jpg" />
+    <Content Include="Image\Employee\g8.jpg" />
+    <Content Include="Image\Employee\g9.jpg" />
+    <Content Include="Image\Employee\pexels-eberhard-grossgasteiger-1428277.jpg" />
+    <Content Include="Image\Product\g1.jpg" />
+    <Content Include="Image\Product\g2.jpeg" />
+    <Content Include="Image\Product\g3.jpg" />
+    <Content Include="Image\Product\g4.jpg" />
+    <Content Include="Image\Product\g5.jpg" />
+    <Content Include="Image\Product\g6.jpg" />
+    <Content Include="Image\Product\g7.jpg" />
+    <Content Include="Image\Product\g8.jpg" />
+    <Content Include="Image\Product\g9.jpg" />
+    <Content Include="Image\Product\pexels-eberhard-grossgasteiger-1428277.jpg" />
     <Content Include="Img\clone.jpg" />
     <Content Include="Img\vp.jpg" />
     <Content Include="Scripts\bootstrap.js" />
@@ -6534,10 +6563,17 @@
     <Content Include="Views\Shipper\Edit - Copy.cshtml" />
     <Content Include="Views\Category\Edit - Copy.cshtml" />
     <Content Include="Views\Employee\Edit - Copy.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
+    <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Product\Photo.cshtml" />
+    <Content Include="Views\Product\Attribute.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\Profile.cshtml" />
+    <Content Include="Views\Product\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Image\Employee\" />
     <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>

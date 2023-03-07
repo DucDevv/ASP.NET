@@ -12,15 +12,32 @@ namespace _19T1021037.DataLayers
     /// </summary>
     public interface IUserAccountDAL
     {
+        ///// <summary>
+        ///// Kiểm tra thông tin đăng nhập
+        ///// Nếu đăng nhập thành công thì trả về thông tin tài khoản, ngược lại thì trả về null
+        ///// </summary>
+        ///// <param name="userName"></param>
+        ///// <param name="password"></param>
+        ///// <returns></returns>
+        //UserAccount Authorize(string userName, string password);
+
+        //bool ChangePassword(string userName, string oldPassword, string newPassword);
+
         /// <summary>
         /// Kiểm tra thông tin đăng nhập
-        /// Nếu đăng nhập thành công thì trả về thông tin tài khoản, ngược lại thì trả về null
         /// </summary>
         /// <param name="userName"></param>
         /// <param name="password"></param>
         /// <returns></returns>
         UserAccount Authorize(string userName, string password);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="oldPassword"></param>
+        /// <param name="newPassword"></param>
+        /// <returns></returns>
         bool ChangePassword(string userName, string oldPassword, string newPassword);
     }
 }

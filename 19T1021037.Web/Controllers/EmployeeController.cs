@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using _19T1021037.DomainModels;
 using _19T1021037.BusinessLayers;
+using _19T1021037.Web;
 
 namespace _19T1021037.Web.Controllers
 {
@@ -94,7 +95,7 @@ namespace _19T1021037.Web.Controllers
 
             if (uploadPhoto != null)
             {
-                string folder = Server.MapPath("~/Images/Employees"); // D:\HocWeb\Images\Employees 
+                string folder = Server.MapPath("~/Image/Employee"); // D:\HocWeb\Images\Employees 
                 string fileName = $"{DateTime.Now.Ticks}_{uploadPhoto.FileName}";
                 string filePath = System.IO.Path.Combine(folder, fileName);
                 uploadPhoto.SaveAs(filePath);
@@ -106,6 +107,7 @@ namespace _19T1021037.Web.Controllers
                 ViewBag.Title = data.EmployeeID == 0 ? "Bổ sung nhân viên" : "Cập nhật nhân viên";
                 return View("Edit", data);
             }
+
             if (data.EmployeeID == 0)
             {
                 CommonDataService.AddEmployee(data);

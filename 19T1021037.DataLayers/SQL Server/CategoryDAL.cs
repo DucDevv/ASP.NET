@@ -125,7 +125,7 @@ namespace _19T1021037.DataLayers.SQL_Server
             return data;
         }
         /// <summary>
-        /// Kiểm tra xem thử 1 loiaj hàng có dữu liệu liên quan không
+        /// Kiểm tra xem thử 1 loại hàng có dữu liệu liên quan không
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

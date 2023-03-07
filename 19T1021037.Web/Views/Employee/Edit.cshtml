@@ -11,36 +11,73 @@
 
             @Html.HiddenFor(m => m.EmployeeID)
 
-            <div class="form-group">
-                <label class="control-label col-sm-2">Thêm ảnh đại diện</label>
-                <div class="col-sm-10">
-                    @Html.HiddenFor(m => m.Photo)
-                    <input type="file" name="uploadPhoto" class="form-control"
-                           onchange="document.getElementById('photoPreview').src = window.URL.createObjectURL(this.files[0])" />
-                    <img id="photoPreview" style="width:100px; height:100px; border:hidden" src="~/Images/Employees/@Model.Photo" />
-                </div>
-
+            @*<div class="form-group">
+            <label class="control-label col-sm-2">Thêm ảnh đại diện</label>
+            <div class="col-sm-10">
+                @Html.HiddenFor(m => m.Photo)
+                <input type="file" name="uploadPhoto" class="form-control"
+                       onchange="document.getElementById('photoPreview').src = window.URL.createObjectURL(this.files[0])" />
+                <img id="photoPreview" style="width:100px; height:100px; border:hidden" src="~/Images/Employees/@Model.Photo" />
             </div>
 
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Tên</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @autofocus = "autofocus" })
+                @Html.ValidationMessageFor(m => m.FirstName, "", new { @style = "color:#ff0000" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Họ</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.LastName, "", new { @style = "color:#ff0000" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Ngày sinh</label>
+            <div class="col-sm-10">
+                @Html.HiddenFor(m => m.BirthDate, new { @class = "form-control" })
+                <input type="text"
+                       name="birthday"
+                       class="form-control"
+                       value="@string.Format("{0:dd/MM/yyy}",Model.BirthDate)" />
+                @Html.ValidationMessageFor(m => m.BirthDate, "", new { @style = "color:#f00" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Email</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
+        </div>*@
+
             <div class="form-group">
-                <label class="control-label col-sm-2">Tên</label>
+                <label class="control-label col-sm-2">Họ nhân viên:</label>
                 <div class="col-sm-10">
+                    @*<input type="text" class="form-control" autofocus value="@Model.FirstName" name="FirstName">*@
                     @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @autofocus = "autofocus" })
                     @Html.ValidationMessageFor(m => m.FirstName, "", new { @style = "color:#ff0000" })
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2">Họ</label>
+                <label class="control-label col-sm-2">Tên nhân viên:</label>
                 <div class="col-sm-10">
+                    @*<input type="text" class="form-control" value="@Model.LastName" name="LastName">*@
                     @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
                     @Html.ValidationMessageFor(m => m.LastName, "", new { @style = "color:#ff0000" })
                 </div>
             </div>
-
             <div class="form-group">
-                <label class="control-label col-sm-2">Ngày sinh</label>
+                <label class="control-label col-sm-2">Ngày sinh:</label>
                 <div class="col-sm-10">
+                    @*<input type="date" class="form-control" value="@Model.BirthDate" name="BirthDate">*@
                     @Html.HiddenFor(m => m.BirthDate, new { @class = "form-control" })
                     <input type="text"
                            name="birthday"
@@ -49,11 +86,28 @@
                     @Html.ValidationMessageFor(m => m.BirthDate, "", new { @style = "color:#f00" })
                 </div>
             </div>
-
             <div class="form-group">
-                <label class="control-label col-sm-2">Email</label>
+                <label class="control-label col-sm-2">Email:</label>
                 <div class="col-sm-10">
+                    @*<input type="text" class="form-control" value="@Model.Email" name="Email">*@
                     @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Ghi chú:</label>
+                <div class="col-sm-10">
+                    @*<input type="text" class="form-control" value="@Model.Notes" name="Notes">*@
+                    @Html.TextBoxFor(m => m.Notes, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Ảnh:</label>
+                @*<div class="preview">*@
+                <div class="col-sm-10">
+                    @Html.HiddenFor(m => m.Photo)
+                    <input type="file" name="uploadPhoto" class="form-control"
+                           onchange="document.getElementById('photoPreview').src = window.URL.createObjectURL(this.files[0])" />
+                    <img id="photoPreview" style="width:100px; height:100px; border:hidden" src="~/Image/Employee/@Model.Photo" />
                 </div>
             </div>
 

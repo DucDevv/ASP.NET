@@ -50,15 +50,62 @@ namespace _19T1021037.Web.Controllers
             }
 
             string cookieValue = Newtonsoft.Json.JsonConvert.SerializeObject(userAccount);
-            FormsAuthentication.SetAuthCookie(userAccount.UserName, false);
+            FormsAuthentication.SetAuthCookie(cookieValue, false);
             return RedirectToAction("Index", "Home");
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Logout()
         {
             Session.Clear();
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Profile()
+        {
+            return View();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="oldPassword"></param>
+        /// <param name="newPassword"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult ChangePassword(string userName = "", string oldPassword = "", string newPassword = "")
+        {
+            ViewBag.UserName = userName;
+            ViewBag.OldPassword = oldPassword;
+            ViewBag.NewPassword = newPassword;
+            if (string.IsNullOrWhiteSpace(newPassword) || string.IsNullOrWhiteSpace(oldPassword))
+            {
+                ModelState.AddModelError("", "Vui long nhap du thong tin");
+                return View();
+            }
+
+            var userNewPassword = UserAccountService.ChangePassword(AccountTypes.Employee, userName, oldPassword, newPassword);
+            if (userNewPassword == false)
+            {
+                ModelState.AddModelError("", "Doi mat khau that bai");
+                return View();
+            }
+            return View("Profile");
         }
     }
 }

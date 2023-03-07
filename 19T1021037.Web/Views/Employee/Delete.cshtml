@@ -1,48 +1,64 @@
-﻿
+﻿@model _19T1021037.DomainModels.Employee
 @{
     ViewBag.Title = "Xoá nhân viên";
 }
 
 <div class="box box-danger">
     <div class="box-body">
-        <form class="form-horizontal" action="">
+        <form class="form-horizontal" action="~/Employee/Delete/@Model.EmployeeID" method="post">
 
             <div class="form-group">
                 <label class="control-label col-sm-2">Ảnh</label>
                 <div class="col-sm-10">
-                    <img src="~/Img/vp.jpg" alt="Ảnh chưa được hiển thị" width="200" height="200" />
+                    @*<img src="~/Img/vp.jpg" alt="Ảnh chưa được hiển thị" width="200" height="200" />*@
+                    <img id="photoPreview" style="width:100px; height:100px; border:hidden" src="~/Image/Employee/@Model.Photo" />
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2">Tên nhân viên</label>
+                <label class="control-label col-sm-2">Tên</label>
                 <div class="col-sm-10">
-                    <p class="form-control-static">Phạm Vũ</p>
+                    <p class="form-control-static">@Model.FirstName</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Họ</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static">@Model.LastName</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Ngày sinh:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static">@Model.BirthDate</p>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2">Email</label>
                 <div class="col-sm-10">
-                    <p class="form-control-static">pv@gmail.com</p>
+                    <p class="form-control-static">@Model.Email</p>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2">Mật khẩu</label>
+                <label class="control-label col-sm-2">Chú thích</label>
                 <div class="col-sm-10">
-                    <p class="form-control-static">123456</p>
+                    <p class="form-control-static">@Model.Notes</p>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
+
                     <button type="submit" class="btn btn-danger">
                         <i class="fa fa-trash"></i>
                         Đồng ý xoá
                     </button>
 
-                    <a href="~/Supplier" class="btn btn-warning">
+                    <a href="~/Employee" class="btn btn-warning">
                         Quay lại
                     </a>
                 </div>

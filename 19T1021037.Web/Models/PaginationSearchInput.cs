@@ -22,5 +22,13 @@ namespace _19T1021037.Web.Models
         /// GIá trị cần tìm
         /// </summary>
         public string SearchValue { get; set; }
+        /// <summary>
+        /// Mã mặt hàng
+        /// </summary>
+        public int CategoryID { get; set; }
+        /// <summary>
+        /// Mã nhà cung cấp
+        /// </summary>
+        public int SupplierID { get; set; }
     }
 }

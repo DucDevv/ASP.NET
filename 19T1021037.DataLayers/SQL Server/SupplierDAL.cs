@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace _19T1021037.DataLayers.SQL_Server
 {
     /// <summary>
-    ///
+    /// Cài đặt các chức năng xử lý liên quan đến nhà cung cấp
     /// </summary>
     public class SupplierDAL : _BaseDAL, ICommonDAL<Supplier>
     {
@@ -97,7 +97,9 @@ namespace _19T1021037.DataLayers.SQL_Server
             using (SqlConnection cn = OpenConnection())
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = @"DELETE FROM Suppliers WHERE SupplierID = @SupplierID AND NOT EXISTS(SELECT * FROM Products WHERE SupplierID = @SupplierID)";
+                cmd.CommandText =  @"DELETE FROM Suppliers 
+                                            WHERE SupplierID = @SupplierID 
+                                            AND NOT EXISTS(SELECT * FROM Products WHERE SupplierID = @SupplierID)";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = cn;
 

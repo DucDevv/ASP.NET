@@ -8,13 +8,16 @@ using _19T1021037.BusinessLayers;
 
 namespace _19T1021037.Web.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Authorize]
     public class SupplierController : Controller
     {
         private const int PAGE_SIZE = 5;
         private const string SUPPLIER_SEARCH = "SupplierSearchCondition";
         /// <summary>
-        /// 
+        /// Tìm kiếm, hiển thị nhà cung cấp dưới dạng phân trang
         /// </summary>
         /// <returns></returns>
         //public ActionResult Index(int page = 1, string searchValue = "")
@@ -48,7 +51,11 @@ namespace _19T1021037.Web.Controllers
             }
             return View(condition);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <returns></returns>
         public ActionResult Search(Models.PaginationSearchInput condition)
         {
             int rowCount = 0;

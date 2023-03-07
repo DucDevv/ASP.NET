@@ -17,6 +17,7 @@ namespace _19T1021037.DomainModels
         public string Email { get; set; }
         public string Password { get; set; }
         public string RoleNames { get; set; }
+        public string Photo { get; set; }
 
     }
 }

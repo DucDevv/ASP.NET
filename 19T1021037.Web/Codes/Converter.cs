@@ -7,9 +7,14 @@ using System.Web;
 
 namespace _19T1021037.Web
 {
-
-    public static class Converter
+    public class Converter
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="format"></param>
+        /// <returns></returns>
         public static DateTime? DMYStringToDateTime(string s, string format = "d/M/yyyy")
         {
             try
@@ -21,12 +26,14 @@ namespace _19T1021037.Web
                 return null;
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static UserAccount CookieToUserAccount(string value)
         {
             return Newtonsoft.Json.JsonConvert.DeserializeObject<UserAccount>(value);
         }
-    }
-
-    
+    } 
 }
